@@ -32,13 +32,13 @@
       name: footer-wrap
       index: 0
     # 计时器部分配置项
-    runtime_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtime.js
-    runtime_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtime.css
+    runtime_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js
+    runtime_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css
     # 徽标部分配置项
     bdageitem:
       - link: https://hexo.io/ #徽标指向网站链接
-      shields: https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo #徽标API
-      message: 博客框架为Hexo_v5.4.0 #徽标提示语
+        shields: https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo #徽标API
+        message: 博客框架为Hexo_v5.4.0 #徽标提示语
       - link: https://butterfly.js.org/
         shields: https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender
         message: 主题版本Butterfly_v3.8.2
