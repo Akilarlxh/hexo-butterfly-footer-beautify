@@ -19,8 +19,7 @@ div#runtime {
   animation: flashlight 1s linear infinite alternate;
 }
 /*悬停显示徽标提示语*/
-a.github-badge img:hover:before,
-img.boardsign:hover:before {
+a.github-badge:hover:before {
   position: fixed;
   width: fit-content;
   margin: auto;
@@ -36,8 +35,7 @@ img.boardsign:hover:before {
   padding: 10px;
   background-color: var(--text-bg-hover);
 }
-[data-theme=dark] a.github-badge img:hover:before,
-[data-theme=dark] img.boardsign:hover:before {
+[data-theme=dark] a.github-badge:hover:before {
   background-color: rgba(18,18,18,0.8);
 }
 @-moz-keyframes flashlight {

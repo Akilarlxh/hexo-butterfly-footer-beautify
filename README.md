@@ -33,7 +33,7 @@
       index: 0
     # 计时器部分配置项
     runtime_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtime.js
-    runtime_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtim.css
+    runtime_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtime.css
     # 徽标部分配置项
     bdageitem:
       - link: https://hexo.io/ #徽标指向网站链接

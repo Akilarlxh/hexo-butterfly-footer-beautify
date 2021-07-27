@@ -22,7 +22,7 @@ hexo.extend.filter.register('after_generate', function (locals) {
       layout_name: config.layout.name,
       layout_index: config.layout.index ? config.layout.index : 0,
       runtime_js: config.runtime_js ? urlFor(config.runtime_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtime.min.js",
-      runtime_css: config.runtime_css ? urlFor(config.runtime_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtim.min.css",
+      runtime_css: config.runtime_css ? urlFor(config.runtime_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/runtime.min.css",
       bdageitem: config.bdageitem ? config.bdageitem : [{"link": "https://hexo.io/","shields": "https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo","message": "博客框架为Hexo"},{"link": "https://butterfly.js.org/","shields": "https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender","message": "主题使用Butterfly"}]
     }
   // 渲染页面
