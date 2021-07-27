@@ -1,0 +1,7 @@
+if timer_enable
+  #workboard
+if bdage_enable
+  p#ghbdages
+    each item in bdageitem
+      a.github-badge(target='_blank' href=item.link style='margin-inline:5px')
+        img(src=item.shields data-title=item.message)

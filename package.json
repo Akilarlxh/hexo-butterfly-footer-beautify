@@ -1,0 +1,34 @@
+{
+  "name": "hexo-butterfly-footer-beautify",
+  "version": "0.0.1",
+  "description": "A footer beauitfy plugin for theme-butterfly",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint ."
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/",
+    "index.js"
+  ],
+  "keywords": [
+    "hexo",
+    "renderer",
+    "runtime",
+    "bdage",
+    "butterfly",
+    "theme-butterfly",
+    "plugins"
+  ],
+  "author": "akilarlxh",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "pug": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Akilarlxh/hexo-butterfly-clock.git"
+  }
+}
