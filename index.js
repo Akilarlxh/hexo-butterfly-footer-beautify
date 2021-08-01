@@ -14,8 +14,8 @@ hexo.extend.filter.register('after_generate', function (locals) {
   if (!(config && (config.enable.bdage || config.enable.timer))) return
   // 集体声明配置项
     const data = {
-      timer_enable: config.enable.timer ? config.enable.timer : true,
-      bdage_enable: config.enable.bdage ? config.enable.bdage : true,
+      timer_enable: config.enable.timer,
+      bdage_enable: config.enable.bdage,
       enable_page: config.enable_page ? config.enable_page : "all",
       exclude: config.exclude,
       layout_type: config.layout.type,
@@ -79,7 +79,9 @@ hexo.extend.filter.register('after_generate', function (locals) {
   // 此处利用挂载容器实现了二级注入
   hexo.extend.injector.register('body_end', user_info_js, "default");
   // 注入样式资源
-  hexo.extend.injector.register('body_end', js_text, "default");
+  if (data.timer_enable){
+    hexo.extend.injector.register('body_end', js_text, "default");
+  }
   // 注入脚本资源
   hexo.extend.injector.register('head_end', css_text, "default");
 },
