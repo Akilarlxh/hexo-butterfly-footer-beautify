@@ -1,7 +1,17 @@
 if timer_enable
   #workboard
 if bdage_enable
-  p#ghbdages
-    each item in bdageitem
-      a.github-badge(target='_blank' href=item.link style='margin-inline:5px' data-title=item.message title='')
-        img(src=item.shields alt='')
+  //- 若没有启用轮播，默认使用全部固定输出
+  if !(swiperpara)
+    p#ghbdages(style="overflow:hidden;height:30px;text-align:center;")
+      each item in bdageitem
+        a.github-badge(target='_blank' href=item.link style='margin-inline:5px' data-title=item.message title='')
+          img(src=item.shields alt='')
+  else
+    #ghbdages(style="overflow:hidden;height:30px;text-align:center;")
+      .swiper-wrapper
+        each item in swiperitem
+          p.swiper-slide
+            each child in item
+              a.github-badge(target='_blank' href=child.link style='margin-inline:5px' title=child.message)
+                img(src=child.shields alt='')

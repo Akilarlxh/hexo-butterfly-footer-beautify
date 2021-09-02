@@ -13,6 +13,23 @@ hexo.extend.filter.register('after_generate', function (locals) {
   // 如果计时器或徽标任意一个配置开启
   if (!(config && (config.enable.bdage || config.enable.timer))) return
   // 集体声明配置项
+    // 首先获取所有的徽标参数列表，默认是博客框架+主题框架的徽标
+    const bdageitem = config.bdageitem ? config.bdageitem : [{"link": "https://hexo.io/","shields": "https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo","message": "博客框架为Hexo"},{"link": "https://butterfly.js.org/","shields": "https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender","message": "主题使用Butterfly"}]
+    //然后获取预备分割的每行个数。
+    const swiperpara = config.swiperpara
+    // 定义一个swiperitem数组用来存放分割后的徽标参数
+    var swiperitem = [];
+    // 当swiperitem存在的时候，默认为开启轮播功能，对bdageitem进行分割
+    if (swiperpara){
+      for(var i=0;i<bdageitem.length;i+=swiperpara){
+        /*按照每行固定个数进行分割，
+        slice方法不会改变原数组，并且返回一个新的数组
+        而且当slice(start,end)第二个end参数值大于数组length的时候
+        会按照数组length算，取的数组结束的所有元素*/
+          swiperitem.push(bdageitem.slice(i,i+swiperpara));
+      }
+    }
+    // console.log(swiperitem)
     const data = {
       timer_enable: config.enable.timer ? config.enable.timer : true,
       bdage_enable: config.enable.bdage ? config.enable.bdage : true,
@@ -23,7 +40,12 @@ hexo.extend.filter.register('after_generate', function (locals) {
       layout_index: config.layout.index ? config.layout.index : 0,
       runtime_js: config.runtime_js ? urlFor(config.runtime_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js",
       runtime_css: config.runtime_css ? urlFor(config.runtime_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css",
-      bdageitem: config.bdageitem ? config.bdageitem : [{"link": "https://hexo.io/","shields": "https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo","message": "博客框架为Hexo"},{"link": "https://butterfly.js.org/","shields": "https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender","message": "主题使用Butterfly"}]
+      swiper_css: config.swiper_css ? urlFor(config.swiper_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.css",
+      swiper_js: config.swiper_js ? urlFor(config.swiper_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.js",
+      swiperbdage_init_js: config.swiperbdage_init_js ? urlFor(config.swiperbdage_init_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/swiperbdage_init_js.min.js",
+      swiperpara: swiperpara,
+      bdageitem: bdageitem,
+      swiperitem: swiperitem
     }
   // 渲染页面
   const temple_html_text = config.temple_html ? config.temple_html : pug.renderFile(path.join(__dirname, './lib/html.pug'),data)
@@ -31,7 +53,12 @@ hexo.extend.filter.register('after_generate', function (locals) {
     //样式资源
   const css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'">`
     //脚本资源
-  const js_text = `<script async src="${data.runtime_js}"></script>`
+    // 若没有开启swiper，则常规引入runtime.js
+  if !(swiperpara){
+    const js_text = `<script async src="${data.runtime_js}"></script>`
+  }else {
+    const js_text = `<script defer src="${data.swiper_js}"></script><script defer data-pjax src="${data.swiperbdage_init_js}"></script>`
+  }
   //注入容器声明
   var get_layout
   //若指定为class类型的容器

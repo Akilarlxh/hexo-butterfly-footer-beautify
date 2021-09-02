@@ -35,6 +35,7 @@
     runtime_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js
     runtime_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css
     # 徽标部分配置项
+    swiperpara: 3 #若非0，则开启轮播功能，每行徽标个数
     bdageitem:
       - link: https://hexo.io/ #徽标指向网站链接
         shields: https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo #徽标API
@@ -57,6 +58,9 @@
       - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
         shields: https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris
         message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
+    swiper_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.css
+    swiper_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.js
+    swiperbdage_init_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/swiperbdage_init_js.min.js
   ```
 3. 参数释义
 
@@ -72,9 +76,13 @@
   |layout.index|0和正整数|【可选】前提是layout.type为class，因为同一页面可能有多个class，此项用来确认究竟排在第几个顺位|
   |runtime_js|url|【必选】页脚计时器脚本，可以下载上文填写示例的链接，参照注释和[教程：Native JS Timer](https://akilar.top/posts/b941af/)自行修改。|
   |runtime_css|url|【可选】自定义样式，预留开发者接口，可自行下载。|
+  |swiperpara|number|【可选】若非零，则开启轮播功能，此项表示每行最多容纳徽标个数，用来应对徽标过多显得页脚拥挤的问题|
   |bdageitem.link|url|【可选】页脚徽标指向的网站链接|
   |bdageitem.shields|url|【必选】页脚徽标对应的API，API具体写法示例参照[教程Add Github Badge](https://akilar.top/posts/e87ad7f8/)|
   |bdageitem.message|text|【可选】页脚徽标悬停时显示的信息|
+  |swiper_css|url|【可选】swiper的依赖|
+  |swiper_js|url|【可选】swiper的依赖|
+  |swiperbdage_init_js|url|【可选】swiper初始化方法|
 # 截图
 ![页脚计时器效果](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/Native-JS-Timer-50daecfe.png)
 ![页脚徽标效果](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/1UWbK9rphJtTHsD.png)
