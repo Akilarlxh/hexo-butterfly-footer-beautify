@@ -51,14 +51,18 @@ hexo.extend.filter.register('after_generate', function (locals) {
   const temple_html_text = config.temple_html ? config.temple_html : pug.renderFile(path.join(__dirname, './lib/html.pug'),data)
   //cdn资源声明
     //样式资源
-  const css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'">`
-    //脚本资源
-    // 若没有开启swiper，则常规引入runtime.js
-  if !(swiperpara){
-    const js_text = `<script async src="${data.runtime_js}"></script>`
-  }else {
-    const js_text = `<script defer src="${data.swiper_js}"></script><script defer data-pjax src="${data.swiperbdage_init_js}"></script>`
+  if (swiperpara){
+    const css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'"><link rel="stylesheet" href="${data.swiper_css}" media="defer" onload="this.media='all'">`
   }
+  else{
+    const css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'">`
+  }
+    //脚本资源
+
+  const runtime_js_text = `<script async src="${data.runtime_js}"></script>`
+
+  const swiperbdage_js_text = `<script defer src="${data.swiper_js}"></script><script defer data-pjax src="${data.swiperbdage_init_js}"></script>`
+
   //注入容器声明
   var get_layout
   //若指定为class类型的容器
@@ -105,11 +109,14 @@ hexo.extend.filter.register('after_generate', function (locals) {
   // 注入用户脚本
   // 此处利用挂载容器实现了二级注入
   hexo.extend.injector.register('body_end', user_info_js, "default");
-  // 注入样式资源
-  if (data.timer_enable){
-    hexo.extend.injector.register('body_end', js_text, "default");
-  }
   // 注入脚本资源
+  if (data.timer_enable){
+    hexo.extend.injector.register('body_end', runtime_js_text, "default");
+  }
+  if (data.swiperpara){
+    hexo.extend.injector.register('body_end', swiperbdage_js_text, "default");
+  }
+  // 注入样式资源
   hexo.extend.injector.register('head_end', css_text, "default");
 },
 hexo.extend.helper.register('priority', function(){
