@@ -52,15 +52,13 @@ hexo.extend.filter.register('after_generate', function (locals) {
   //cdn资源声明
     //样式资源
   if (swiperpara){
-    const css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'"><link rel="stylesheet" href="${data.swiper_css}" media="defer" onload="this.media='all'">`
-  }
-  else{
-    const css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'">`
+    var css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'"><link rel="stylesheet" href="${data.swiper_css}" media="defer" onload="this.media='all'">`
+  }else{
+    var css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'">`
   }
     //脚本资源
 
   const runtime_js_text = `<script async src="${data.runtime_js}"></script>`
-
   const swiperbdage_js_text = `<script defer src="${data.swiper_js}"></script><script defer data-pjax src="${data.swiperbdage_init_js}"></script>`
 
   //注入容器声明

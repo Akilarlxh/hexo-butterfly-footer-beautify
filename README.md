@@ -86,3 +86,8 @@
 # 截图
 ![页脚计时器效果](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/Native-JS-Timer-50daecfe.png)
 ![页脚徽标效果](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/1UWbK9rphJtTHsD.png)
+
+
+# 目前存在的问题：
+1. 和hexo-butterfly-swiper共用依赖，但是无法解决swiper.min.js在pjax重载后的引入顺序问题。目前只能是重复引入。后续可能把这几个整合到一起。
+2. 如果之前用hexo-butterfly-wowjs给徽标添加过动画，需要关闭动画。wowjs的动画效果和swiper的轮播效果不兼容。
