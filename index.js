@@ -42,7 +42,7 @@ hexo.extend.filter.register('after_generate', function (locals) {
       runtime_css: config.runtime_css ? urlFor(config.runtime_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css",
       swiper_css: config.swiper_css ? urlFor(config.swiper_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.css",
       swiper_js: config.swiper_js ? urlFor(config.swiper_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.js",
-      swiperbdage_init_js: config.swiperbdage_init_js ? urlFor(config.swiperbdage_init_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/swiperbdage_init_js.min.js",
+      swiperbdage_init_js: config.swiperbdage_init_js ? urlFor(config.swiperbdage_init_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/swiperbdage_init.min.js",
       swiperpara: swiperpara,
       bdageitem: bdageitem,
       swiperitem: swiperitem
