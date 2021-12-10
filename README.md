@@ -54,7 +54,7 @@
         message: 本站采用双线部署，联通线路托管于Coding
       - link: https://github.com/
         shields: https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub
-        message: 本站项目由Gtihub托管
+        message: 本站项目由Github托管
       - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
         shields: https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris
         message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
