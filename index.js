@@ -38,11 +38,11 @@ hexo.extend.filter.register('after_generate', function (locals) {
       layout_type: config.layout.type,
       layout_name: config.layout.name,
       layout_index: config.layout.index ? config.layout.index : 0,
-      runtime_js: config.runtime_js ? urlFor(config.runtime_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js",
-      runtime_css: config.runtime_css ? urlFor(config.runtime_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css",
-      swiper_css: config.swiper_css ? urlFor(config.swiper_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.css",
-      swiper_js: config.swiper_js ? urlFor(config.swiper_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.js",
-      swiperbdage_init_js: config.swiperbdage_init_js ? urlFor(config.swiperbdage_init_js) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/swiperbdage_init.min.js",
+      runtime_js: config.runtime_js ? urlFor(config.runtime_js) : "https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js",
+      runtime_css: config.runtime_css ? urlFor(config.runtime_css) : "https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css",
+      swiper_css: config.swiper_css ? urlFor(config.swiper_css) : "https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiper.min.css",
+      swiper_js: config.swiper_js ? urlFor(config.swiper_js) : "https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiper.min.js",
+      swiperbdage_init_js: config.swiperbdage_init_js ? urlFor(config.swiperbdage_init_js) : "https://unpkg.zhimg.com/hexo-butterfly-footer-beautify/lib/swiperbdage_init.min.js",
       swiperpara: swiperpara,
       bdageitem: bdageitem,
       swiperitem: swiperitem
@@ -52,9 +52,9 @@ hexo.extend.filter.register('after_generate', function (locals) {
   //cdn资源声明
     //样式资源
   if (swiperpara){
-    var css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'"><link rel="stylesheet" href="${data.swiper_css}" media="defer" onload="this.media='all'">`
+    var css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="print" onload="this.media='all'"><link rel="stylesheet" href="${data.swiper_css}" media="print" onload="this.media='all'">`
   }else{
-    var css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="defer" onload="this.media='all'">`
+    var css_text = `<link rel="stylesheet" href="${data.runtime_css}" media="print" onload="this.media='all'">`
   }
     //脚本资源
 

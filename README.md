@@ -32,8 +32,8 @@
       name: footer-wrap
       index: 0
     # 计时器部分配置项
-    runtime_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js
-    runtime_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css
+    runtime_js: https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js
+    runtime_css: https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css
     # 徽标部分配置项
     swiperpara: 3 #若非0，则开启轮播功能，每行徽标个数
     bdageitem:
@@ -58,9 +58,9 @@
       - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
         shields: https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris
         message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
-    swiper_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.css
-    swiper_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-swiper/lib/swiper.min.js
-    swiperbdage_init_js: https://cdn.jsdelivr.net/npm/hexo-butterfly-footer-beautify/lib/swiperbdage_init.min.js
+    swiper_css: https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiper.min.css
+    swiper_js: https://unpkg.zhimg.com/hexo-butterfly-swiper/lib/swiper.min.js
+    swiperbdage_init_js: https://unpkg.zhimg.com/hexo-butterfly-footer-beautify/lib/swiperbdage_init.min.js
   ```
 3. 参数释义
 
@@ -84,8 +84,8 @@
   |swiper_js|url|【可选】swiper的依赖|
   |swiperbdage_init_js|url|【可选】swiper初始化方法|
 # 截图
-![页脚计时器效果](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/Native-JS-Timer-50daecfe.png)
-![页脚徽标效果](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/1UWbK9rphJtTHsD.png)
+![页脚计时器效果](https://unpkg.zhimg.com/akilar-candyassets/image/Native-JS-Timer-50daecfe.png)
+![页脚徽标效果](https://unpkg.zhimg.com/akilar-candyassets/image/1UWbK9rphJtTHsD.png)
 
 
 # 目前存在的问题：
